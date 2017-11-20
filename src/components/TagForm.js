@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import './TagForm';
+import './TagForm.css';
+import { FormGroup } from '@blueprintjs/core';
+import TagContexts from './TagContexts';
 
 class TagForm extends Component {
   render() {
     return (
-      <p className="App-intro">
-        This is going to be replaced with a form.
-      </p>
+      <FormGroup className='TagForm-form'>
+        <TagContexts />
+        <input className="pt-input .default" type="text" placeholder="Tag name" dir="auto" />
+      </FormGroup>
     );
   }
 }
