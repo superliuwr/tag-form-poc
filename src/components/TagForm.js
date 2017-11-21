@@ -71,7 +71,7 @@ class TagForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('Form submitted: ' + this.state.name + ' ,' + this.state.displayName);
+    alert('Form submitted: ' + this.state.name + ' ,' + this.state.displayName + ' ,' + this.state.context);
     event.preventDefault();
   }
 
@@ -88,6 +88,19 @@ class TagForm extends React.Component {
             Display Name
             <span className='pt-text-muted'>*</span>
             <input className='pt-input' style={{width: '200px'}} type='text' dir='auto' value={this.state.displayName} onChange={this.handleDisplayNameChange} />
+          </label>
+          <label className='pt-label pt-inline'>
+            Context
+            <div class='pt-select'>
+              <select value={this.state.context} onChange={this.handleContextChange}>
+                <option>Choose a context</option>
+                <option value='1'>Place</option>
+                <option value='2'>People</option>
+                <option value='3'>Organization</option>
+                <option value='4'>Event</option>
+                <option value='5'>Thing</option>
+              </select>
+            </div>
           </label>
           <input type='submit' value='Submit' />
         </form>
