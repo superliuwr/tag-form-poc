@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './TagForm.css';
 
 class TagForm extends React.Component {
@@ -9,14 +10,14 @@ class TagForm extends React.Component {
       displayName: '',
       context: '',
       themes: [],
-      visibility: false
+      isVisible: false
     };
 
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleDisplayNameChange = this.handleDisplayNameChange.bind(this);
     this.handleContextChange = this.handleContextChange.bind(this);
     this.handleThemesChange = this.handleThemesChange.bind(this);
-    this.handleVisibilityChange = this.handleVisibilityChange.bind(this);
+    this.handleIsVisibleChange = this.handleIsVisibleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -26,7 +27,7 @@ class TagForm extends React.Component {
       displayName: this.state.displayName,
       context: this.state.context,
       themes: this.state.themes,
-      visibility: this.state.visibility
+      isVisible: this.state.isVisible
     });
   }
 
@@ -36,7 +37,7 @@ class TagForm extends React.Component {
       displayName: event.target.value,
       context: this.state.context,
       themes: this.state.themes,
-      visibility: this.state.visibility
+      isVisible: this.state.isVisible
     });
   }
 
@@ -46,7 +47,7 @@ class TagForm extends React.Component {
       displayName: this.state.displayName,
       context: event.target.value,
       themes: this.state.themes,
-      visibility: this.state.visibility
+      isVisible: this.state.isVisible
     });
   }
 
@@ -56,17 +57,17 @@ class TagForm extends React.Component {
       displayName: this.state.displayName,
       context: this.state.context,
       themes: event.target.value,
-      visibility: this.state.visibility
+      isVisible: this.state.isVisible
     });
   }
 
-  handleVisibilityChange(event) {
+  handleIsVisibleChange(event) {
     this.setState({
       name: this.state.name,
       displayName: this.state.displayName,
       context: this.state.context,
       themes: this.state.themes,
-      visibility: event.target.value
+      isVisible: !this.state.isVisible
     });
   }
 
@@ -101,6 +102,11 @@ class TagForm extends React.Component {
                 <option value='5'>Thing</option>
               </select>
             </div>
+          </label>
+          <label className='pt-control pt-switch pt-align-right'>
+            <input type='checkbox' />
+            <span className='pt-control-indicator'></span>
+            Visible
           </label>
           <input type='submit' value='Submit' />
         </form>
