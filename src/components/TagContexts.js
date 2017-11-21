@@ -16,14 +16,12 @@ class TagContexts extends Component {
     }];
 
     const renderTagContext = ({handleClick, index, isActive, item}) => {
-      return (
-        <MenuItem className={isActive ? Classes.ACTIVE : ""}
-          key={item.id}
-          label={item.name}
-          text={item.name}
-          onClick={() => {console.log(item.name)}}
-        />
-      );
+      <MenuItem className={isActive ? Classes.ACTIVE : ""}
+        key={item.id}
+        label={item.name}
+        text={item.name}
+        onClick={() => {console.log(item.name)}}
+      />
     };
 
     console.log('rendering');
